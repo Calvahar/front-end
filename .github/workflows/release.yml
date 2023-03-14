@@ -23,6 +23,12 @@ jobs:
       - name: Build
         run: npm run build -- --prod
 
+      - name: Make /tmp/built.tar
+        run: |
+          mkdir tmp
+          cd tmp
+          touch built.tar
+
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
